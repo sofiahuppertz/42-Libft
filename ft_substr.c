@@ -1,23 +1,39 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 11:56:51 by shuppert          #+#    #+#             */
+/*   Updated: 2023/05/07 17:41:42 by shuppert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    //create substring pointer.
-    char    *substring;
-    int     i;
-    //allocates space of the size length * char.
-    substring = (char *)malloc(len * sizeof(char));
+	char	*substr;
+	size_t	i;
+	size_t	debut;
 
-    //iterate through the ptr to fill the string, size len or until string[start + i] is nul.
-    while (i < len && s[start + i] != '\0' )
-    {
-        //copy substring.
-        substring[i] = s[start + i];
-        i++;
-    }
-    //return substring.
-    return (substring);
-
+	if (!s)
+		return (NULL);
+	if ((unsigned int)ft_strlen(s) < start)
+		return (ft_strdup(""));
+	debut = ft_strlen(s + start);
+	if (debut < len)
+		len = debut;
+	i = 0;
+	substr = (char *)malloc((len + 1) * sizeof(char));
+	if (!substr)
+		return (NULL);
+	while (i < len)
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = 0;
+	return (substr);
 }
-

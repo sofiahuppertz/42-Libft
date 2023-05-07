@@ -1,46 +1,34 @@
-#define NULL ((void *) 0);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 11:59:55 by shuppert          #+#    #+#             */
+/*   Updated: 2023/05/06 17:36:47 by shuppert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int     ft_strlen(const char *str)
+#include "libft.h"
+
+char	*ft_strrchr(const char *str, int c)
 {
-    int     i;
+	size_t			i;
+	char			*result;
+	unsigned char	ch;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	i = ft_strlen(str);
+	ch = c;
+	result = NULL;
+	while ((int)i >= 0)
+	{
+		if (str[i] == ch)
+		{
+			result = (char *)&str[i];
+			return (result);
+		}
+		i--;
+	}
+	return (result);
 }
-
-char    *ft_strrchr(const char *str, int c)
-{
-    int     i;
-    char    *result;
-
-    i = ft_strlen(str) - 1;
-    result = NULL;
-    // i - 1 >= 0 because strlen returns on index higher and array starts at index 0.
-    while (i >= 0)
-    {
-        if (str[i] == c) 
-        {
-            result = (char *)&str[i];
-            return (result);
-        }
-        i--;
-    }
-
-    return (result);
-}
-/*#include <stdio.h>
-
-int main(void)
-{
-    char *str = "papapa";
-    char c = 'p';
-    char *result = ft_strrchr(str,c);
-
-    printf("%p\n", (char *)ft_strrchr(str, c));
-    printf("Adress of str is %p\n", str);
-    printf("The last occurrence of %c is index %li\n", c, result - str);
-}*/

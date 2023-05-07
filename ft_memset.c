@@ -1,21 +1,28 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 11:43:07 by shuppert          #+#    #+#             */
+/*   Updated: 2023/05/05 13:13:46 by shuppert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//stdio.h to use size_t;
-//Type int was before function prototypes existed; 
-//https://stackoverflow.com/questions/5919735/why-does-memset-take-an-int-instead-of-a-char
+#include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned int i;
-    char *str;
-    
-    *str = (char *)s;
-    i = 0;
-    while (i < n)
-    {
-        str[i] = (unsigned char)c;
-        i++;
-    }
-    return(str);
-}
+	unsigned int	i;
+	char			*str;
 
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = (unsigned char)c;
+		i++;
+	}
+	return (str);
+}

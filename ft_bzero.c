@@ -1,18 +1,28 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/04 18:58:23 by shuppert          #+#    #+#             */
+/*   Updated: 2023/05/05 13:56:47 by shuppert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//stddef.h to use size_t;
-void *ft_bzero(void *s, size_t n)
+#include "libft.h"
+
+void	*ft_bzero(void *s, size_t n)
 {
-    int i;
-    char *str = (char *)s;
-    
-    i = 0;
-    while (i < n)
-    {
-        str[i] = '\0';
-        i++;
-    }
+	size_t	i;
+	char	*str;
 
-    return (s);
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+	return (s);
 }
-

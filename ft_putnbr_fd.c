@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:28:29 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/05 17:41:20 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:53:45 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nb = -n;
 	}
-	while (nb > 9)
+	if (nb > 9)
 	{
 		ft_putnbr_fd(nb / 10, fd);
-		ft_putchar_fd(nb % 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(nb + '0', fd);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:38:58 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/06 16:28:46 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:57:58 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-#include <string.h>

@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:57:24 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/07 17:38:19 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:56:24 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	get_end(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int start;
-	int end;
-	char *newstr;
+	int		start;
+	int		end;
+	char	*newstr;
 
 	if (!s1)
 		return (NULL);

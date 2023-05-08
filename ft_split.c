@@ -6,67 +6,88 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:45 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/07 18:01:54 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:35:02 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_substrings(char const *s, char c)
+static int	free_all(char **str, int size)
 {
-	int	i;
-	int	len;
-	int	count;
-
-	len = ft_strlen(s);
-	count = 1;
-	i = 0;
-	while (i < len)
-	{
-		if (s[i] == c)
-			count++;
-	}
-	return (count);
+	while (size--)
+		free(str[size]);
+	return (-1);
 }
 
-void	extract_substrings(const char *s, char c, char **result)
+static void	copy_word(char *word, const char *start, char stop)
+{
+	int	i;
+
+	i = 0;
+	while (start[i] != stop && start[i] != 0)
+	{
+		word[i] = start[i];
+		i++;
+	}
+	word[i] = 0;
+}
+
+static int	make_tab(const char *s, char **dest, char c)
 {
 	int	i;
 	int	j;
-	int	k;
+	int	word;
 
 	i = 0;
-	j = 0;
-	while (s[j] != '\0')
+	word = 0;
+	while (s[i] != 0)
 	{
-		k = j;
-		i++;
-		j++;
+		if (s[i] == c || s[i] == 0)
+			i++;
+		else
+		{
+			j = 0;
+			while (s[i + j] != c && s[i + j] != '\0')
+				j++;
+			dest[word] = (char *)malloc((j + 1) * sizeof(char));
+			if (!dest[word])
+				return (free_all(dest, word - 1));
+			copy_word(dest[word], s + i, c);
+			i += j;
+			word++;
+		}
 	}
+	return (0);
+}
+
+static int	count_words(const char *str, char charset)
+{
+	int	i;
+	int	words;
+
+	words = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i + 1] == charset || str[i + 1] == '\0') == 1
+			&& (str[i] == charset || str[i] == '\0') == 0)
+			words++;
+		i++;
+	}
+	return (words);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		count;
+	int		words;
 	char	**result;
 
-	count = count_substrings(s, c);
-	result = (char **)malloc(count + 1 * sizeof(char *));
+	words = count_words(s, c);
+	result = (char **)malloc((words + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	extract_substrings(s, c, result);
-	if (result)
-		result[count] = NULL;
-	return (result);
-}int		count;
-	char	**result;
-
-	count = count_substrings(s, c);
-	result = (char **)malloc(count + 1 * sizeof(char *));
-	if (!result)
+	result[words] = 0;
+	if (make_tab(s, result, c) == -1)
 		return (NULL);
-	extract_substrings(s, c, result);
-	if (result)
-		result[count] = NULL;
 	return (result);
 }

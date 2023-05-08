@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:57:05 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/07 17:46:38 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:57:00 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
-
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_isalpha(int c);

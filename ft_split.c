@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:43:45 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/08 11:35:02 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:35:27 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	result[words] = 0;
 	if (make_tab(s, result, c) == -1)
+	{
+		free(result);
 		return (NULL);
+	}
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:04:58 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/05 13:05:34 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/05/12 20:42:28 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,11 @@
 
 void	*ft_calloc(size_t elements, size_t size)
 {
-	void			*ptr;
-	int				total_size;
-	int				i;
-	unsigned char	*byte_ptr;
+	void	*ptr;
 
-	if ((elements > 0 && SIZE_MAX / elements < size) || elements <= 0
-		|| size <= 0)
-	{
-		return (NULL);
-	}
-	total_size = size * elements;
-	ptr = malloc(total_size);
-	byte_ptr = (unsigned char *)ptr;
-	i = 0;
-	if (ptr != NULL)
-	{
-		while (i < total_size)
-		{
-			byte_ptr[i] = 0;
-			i++;
-		}
-	}
-	return (ptr);
+	ptr = malloc(elements * size);
+	if (!ptr)
+		return (0x0);
+	ft_memset(ptr, 0, elements * size);
+	return ((void *)ptr);
 }

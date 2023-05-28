@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 11:38:58 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/09 15:25:47 by shuppert         ###   ########.fr       */
+/*   Created: 2023/05/08 18:27:36 by shuppert          #+#    #+#             */
+/*   Updated: 2023/05/10 16:58:10 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	const unsigned char	*p1;
-	const unsigned char	*p2;
-	int					result;
+	t_list	*node;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	result = 0;
-	while (n-- > 0 && result == 0)
+	node = *lst;
+	if (lst)
 	{
-		result = *p1++ - *p2++;
+		while (node != NULL)
+		{
+			*lst = node->next;
+			if (node != NULL && node->content != NULL)
+			{
+				(del)(node->content);
+				free(node);
+				node = NULL;
+			}
+			node = *lst;
+		}
 	}
-	return (result);
 }

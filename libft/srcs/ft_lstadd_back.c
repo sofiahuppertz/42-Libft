@@ -25,9 +25,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new_lst)
 				node = node->next;
 			node->next = new_lst;
 		}
-	}
-	else
-	{
-		*lst = new_lst;
+		else
+		{
+			*lst = new_lst;
+		}
 	}
 }

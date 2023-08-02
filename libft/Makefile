@@ -79,7 +79,7 @@ objects/%.o: srcs/%.c
 $(LIB_NAME): $(OBJS)
 	ar rcs $(LIB_NAME) $(OBJS)
 
-clean: $(OBJS) $(LIB_NAME)
+clean:
 	rm -f $(OBJS) $(LIB_NAME)
 
 .PHONY: clean re

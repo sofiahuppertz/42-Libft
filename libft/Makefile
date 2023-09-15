@@ -67,6 +67,8 @@ SRCS_NAMES = ft_memset.c \
 	display_text.c \
 	display_unsigned_integer.c \
 	str_array_length.c \
+	str_to_lower.c \
+	generate_random.c \
 
 SRCS = $(addprefix srcs/, $(SRCS_NAMES))
 
@@ -79,7 +81,12 @@ objects/%.o: srcs/%.c
 $(LIB_NAME): $(OBJS)
 	ar rcs $(LIB_NAME) $(OBJS)
 
-clean:
-	rm -f $(OBJS) $(LIB_NAME)
+all: $(LIB_NAME)
 
-.PHONY: clean re
+fclean: clean
+	rm -f all
+
+clean:
+	rm -f $(OBJS)
+
+.PHONY: clean re fclean all

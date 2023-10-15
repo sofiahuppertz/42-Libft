@@ -11,9 +11,8 @@
 # **************************************************************************** #
 
 LIB_NAME = libft.a
-EXEC_NAME = pipex
 
-LIB_SRCS_NAMES = ft_memset.c \
+SRCS_NAMES = ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
 	ft_memcpy.c \
@@ -69,46 +68,25 @@ LIB_SRCS_NAMES = ft_memset.c \
 	display_unsigned_integer.c \
 	str_array_length.c \
 	str_to_lower.c \
-	generate_random.c 
-	
-EXEC_SRCS_NAMES = main.c \
-	pipex_end_all.c \
-	pipex_utils.c \
-	
+	generate_random.c \
 
+SRCS = $(addprefix srcs/, $(SRCS_NAMES))
 
+OBJS = $(addprefix objects/, $(SRCS_NAMES:.c=.o))
 
-LIB_SRCS = $(addprefix lib_srcs/, $(LIB_SRCS_NAMES))
-EXEC_SRCS = $(addprefix pipex_srcs/, $(EXEC_SRCS_NAMES))
+objects/%.o: srcs/%.c
+	mkdir -p objects
+	cc -Wall -Wextra -Werror -I. -c $< -o $@
 
+$(LIB_NAME): $(OBJS)
+	ar rcs $(LIB_NAME) $(OBJS)
 
-LIB_OBJS = $(addprefix objects/lib/, $(LIB_SRCS_NAMES:.c=.o))
-EXEC_OBJS = $(addprefix objects/pipex/, $(EXEC_SRCS_NAMES:.c=.o))
-
-
-all: $(LIB_NAME) $(EXEC_NAME)
-
-$(LIB_NAME): $(LIB_OBJS)
-	ar rcs $(LIB_NAME) $(LIB_OBJS)
-
-$(EXEC_NAME): $(EXEC_OBJS) $(LIB_NAME)
-	$(CC) $(CFLAGS) $(EXEC_OBJS) -L. -lft -o $(EXEC_NAME)
-
-objects/lib/%.o: lib_srcs/%.c
-	cc -Wall -Wextra -Werror -I./headers -c $< -o $@
-
-
-objects/pipex/%.o: pipex_srcs/%.c
-	cc -Wall -Wextra -Werror -I./headers -c $< -o $@
-
-clean: 
-	rm -f objects/lib/*.o
-	rm -f objects/pipex/*.o
+all: $(LIB_NAME)
 
 fclean: clean
-	rm -f $(LIB_NAME) $(EXEC_NAME)
+	rm -f $(LIB_NAME)
 
-re: fclean 
-	make all
+clean:
+	rm -f $(OBJS)
 
 .PHONY: clean re fclean all

@@ -92,21 +92,3 @@ int	free_list(t_node *head)
 	return (0);
 }
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	char	*return_ptr;
-
-	if (dest == NULL)
-	{
-		return (NULL);
-	}
-	return_ptr = dest;
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (return_ptr);
-}

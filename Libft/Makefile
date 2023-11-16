@@ -30,7 +30,9 @@ SRCS_NAMES = ft_memset.c \
 	ft_strchr.c \
 	ft_strrchr.c \
 	ft_strncmp.c \
+	ft_strcmp.c \
 	ft_strlcpy.c \
+	ft_strcpy.c \
 	ft_strlcat.c \
 	ft_strnstr.c \
 	ft_atoi.c \

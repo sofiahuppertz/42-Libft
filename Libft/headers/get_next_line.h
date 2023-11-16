@@ -33,7 +33,6 @@ char				*copy_line(t_node **head, int size);
 char				*extract_from_buffer(char *buffer, int size);
 char				*finalize_line(t_node **lines, int count);
 int					free_list(t_node *head);
-char				*ft_strcpy(char *dest, char *src);
 int					get_line_length(t_node **head);
 char				*get_next_line(int fd);
 

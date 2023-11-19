@@ -1,4 +1,6 @@
 
+#include "../headers/libft.h"
+
 int ft_is_all(const char *str, int (*f)(int))
 {
     while (*str)

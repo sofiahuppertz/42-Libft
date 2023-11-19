@@ -71,6 +71,9 @@ SRCS_NAMES = ft_memset.c \
 	str_array_length.c \
 	str_to_lower.c \
 	generate_random.c \
+	ft_add_while_true.c \
+	ft_is_all.c \
+	ft_iswhitespace.c 
 
 SRCS = $(addprefix srcs/, $(SRCS_NAMES))
 

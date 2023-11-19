@@ -133,7 +133,7 @@ int	add_last_node(t_node **head, char *data, int size)
 	if (!new_node)
 		return (1);
 	new_node->data = malloc(sizeof(char) * (size + 1));
-	new_node->data = ft_strcpy(new_node->data, data);
+	ft_strcpy(new_node->data, data);
 	new_node->next = NULL;
 	if (*head == NULL)
 	{

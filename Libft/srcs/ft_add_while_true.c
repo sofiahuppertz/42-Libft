@@ -1,6 +1,6 @@
 #include "../headers/libft.h"
 
-int    ft_increment_while_true(int a, char *str, int (*f)(int))
+int    ft_add_while_true(int a, char *str, int (*f)(int))
 {
     if (!str)
         return (0);

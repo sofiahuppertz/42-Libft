@@ -42,8 +42,9 @@ void				*ft_calloc(size_t count, size_t size);
 void				ft_lstadd_front(t_list **lst, t_list *new_lst);
 void				ft_lstadd_back(t_list **lst, t_list *new_lst);
 
-int    				ft_increment_while_true(int a, char *str, int (*f)(int));
+int    				ft_add_while_true(int a, char *str, int (*f)(int));
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int					ft_is_all(const char *str, int (*f)(int));
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

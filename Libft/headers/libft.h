@@ -27,6 +27,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_memdel(void *ptr);
+void				ft_memdel_2d(void **ptr);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
@@ -80,6 +82,7 @@ char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_split(char const *s, char c);
 
+void				exit_failure(void);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);

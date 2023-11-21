@@ -13,5 +13,5 @@ void ft_memdel_2d(void **ptr)
     }
     free(ptr);
     ptr = NULL;
-    return (NULL);
+    return ;
 }

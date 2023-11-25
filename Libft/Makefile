@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+         #
+#    By: sofia <sofia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 18:35:09 by shuppert          #+#    #+#              #
-#    Updated: 2023/07/19 17:48:33 by shuppert         ###   ########.fr        #
+#    Updated: 2023/11/25 20:13:31 by sofia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS_NAMES = ft_memset.c \
 	ft_strcmp.c \
 	ft_strlcpy.c \
 	ft_strcpy.c \
+	ft_strncpy.c \
 	ft_strlcat.c \
 	ft_strnstr.c \
 	ft_atoi.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofia <sofia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:57:05 by shuppert          #+#    #+#             */
-/*   Updated: 2023/08/27 15:05:33 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:13:13 by sofia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ size_t				str_array_length(const char **str_array);
 
 
 char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*str_to_lower(char *str);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);

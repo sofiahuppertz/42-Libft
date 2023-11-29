@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofia <sofia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:57:05 by shuppert          #+#    #+#             */
-/*   Updated: 2023/11/25 20:13:13 by sofia            ###   ########.fr       */
+/*   Updated: 2023/11/28 13:32:03 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdlib.h>
 # include <time.h>
 # include <unistd.h>
-
 
 typedef struct s_list
 {
@@ -44,7 +43,7 @@ void				*ft_calloc(size_t count, size_t size);
 void				ft_lstadd_front(t_list **lst, t_list *new_lst);
 void				ft_lstadd_back(t_list **lst, t_list *new_lst);
 
-int    				ft_add_while_true(int a, char *str, int (*f)(int));
+int					ft_add_while_true(int a, char *str, int (*f)(int));
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_is_all(const char *str, int (*f)(int));
 int					ft_isalpha(int c);
@@ -55,18 +54,17 @@ int					ft_isprint(int c);
 int					ft_iswhitespace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-int 				ft_strcmp(const char *s1, const char *s2);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
 int					ft_lstsize(t_list *lst);
 
-double  			generate_random(double min, double max);
+double				generate_random(double min, double max);
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				str_array_length(const char **str_array);
-
 
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);

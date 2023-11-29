@@ -6,17 +6,18 @@
 /*   By: shuppert <shuppert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:09:32 by shuppert          #+#    #+#             */
-/*   Updated: 2023/05/06 17:50:41 by shuppert         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:36:42 by shuppert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	const char *p = s;
+	const char	*p;
+
+	p = s;
 	while (*p)
 		++p;
-	return p - s;
+	return (p - s);
 }
-
